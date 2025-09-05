@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ExpenseTracker.MAUI.Views.Pages.RegisterPage"
+             Title="Register">
+    <VerticalStackLayout Spacing="10"
+                         Padding="10">
+
+        <Label Text="Email"/>
+        <Entry x:Name="emailEntry"
+               Placeholder="email@example.com"
+               Margin="0, -10">
+            <Entry.Behaviors>
+                <toolkit:EmailValidationBehavior x:Name="emailValidator"
+                                                 Flags="ValidateOnValueChanged"
+                                                 MinimumLength="1"/>
+            </Entry.Behaviors>
+        </Entry>
+
+        <Label Text="Password"/>
+        <Entry x:Name="passwordEntry"
+               Placeholder="Password"
+               IsPassword="True"
+               Margin="0, -10">
+            <Entry.Behaviors>
+                <toolkit:TextValidationBehavior x:Name="passwordValidator"
+                                                Flags="ValidateOnValueChanged"
+                                                MinimumLength="1"/>
+            </Entry.Behaviors>
+        </Entry>
+        
+        <Label Text="Repeat password"/>
+        <Entry x:Name="passwordRepeatEntry"
+               Placeholder="Password"
+               IsPassword="True"
+               Margin="0, -10">
+            <Entry.Behaviors>
+                <toolkit:TextValidationBehavior x:Name="passwordRepeatValidator"
+                                                Flags="ValidateOnValueChanged"
+                                                MinimumLength="1"/>
+            </Entry.Behaviors>
+        </Entry>
+
+        <Button x:Name="backToLoginButton"
+                Text="Already have an account"
+                Clicked="backToLoginButton_Clicked"/>
+
+        <Button x:Name="registerButton"
+                Text="Register"
+                Clicked="registerButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

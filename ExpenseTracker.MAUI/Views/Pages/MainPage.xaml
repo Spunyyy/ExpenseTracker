@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseTracker.MAUI.Views.Pages.MainPage"
+             xmlns:controls="clr-namespace:ExpenseTracker.MAUI.Views.Controls"
+             Title="Expenses">
+    <VerticalStackLayout Padding="10">
+        <CollectionView x:Name="expensesCollectionView"
+                    Background="Transparent">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <controls:ExpenseView EditExpense="ExpenseView_EditExpense" DeleteExpense="ExpenseView_DeleteExpense"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
